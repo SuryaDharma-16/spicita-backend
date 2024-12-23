@@ -12,23 +12,13 @@ const getNotes = async(req, res) => {
 const addNotes = async (req, res) => {
     const {title, datetime, note} = req.body;
     try {
-        const data = await query("INSERT INTO notes (title, datetime, note) VALUES (?, ?, ?)", [title, datetime, note]);
+        const data = await query("INSERT INTO notes (title, note) VALUES (?, ?)", [title, note]);
 
         return res.status(200).json({msg: "Yoshha berhasil"})
     } catch(error) {
         return res.status(400).json({msg: "maaf, sedang puasa"})
     }
 }
-
-// const getNotesbyId = async (req, res) => {
-//   const {id} = req.params;
-//   try {
-//     const result = await query("SELECT * FROM notes WHERE id = (?)", [id]);
-//     return res.status(200).json(result)
-//   } catch (error) {
-//     return res.status(400).json({msg: "tidak berhasil", err: error});
-//   }
-// };
 
 const getNotesbyId = async (req, res) => {
   // Extract the note ID from the request parameters
