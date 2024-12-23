@@ -1,0 +1,18 @@
+###
+POST http://localhost:2424/login
+Content-Type: application/json
+
+{
+    "email": "surya@gmail.com",
+    "password": "surya"
+}
+
+###
+POST http://localhost:2424/register
+Content-Type: application/json
+
+{
+    "username": "surya",
+    "email": "surya@gmail.com",
+    "password": "surya"
+}
